@@ -1,0 +1,83 @@
+<%- include('layouts/head'); -%>
+    <body>
+        <%- include('layouts/navbar'); -%>
+         <!-- Page Header-->
+         <header class="masthead" style="background-image: url('/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Histoire</h1>
+                            <span class="subheading">c'est à vous de jouer ! </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Together, let's writting our story ... </p>
+                        <div class="my-5">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form form action="/posts/store" method="POST" enctype="multipart/form-data" >
+                                
+                                <div class="form-floating">
+                                    <input class="form-control" name="title" id="title" type=text placeholder="Enter your title..." data-sb-validations="required" />
+                                    <label for="title">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A title is required.</div>
+                                </div>
+                               
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="summary" name="summary" placeholder="Enter your text here ..." style="height: 5rem" data-sb-validations="required"></textarea>
+                                    <label for="summary">Résumé</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                </div>
+
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="body" name="body" placeholder="Enter your text here ..." style="height: 12rem" data-sb-validations="required"></textarea>
+                                    <script>
+                                        $('#body').summernote({
+                                        placeholder: '...',
+                                        tabsize: 2,height: 200
+                                        });
+                                        </script>
+                                    <label for="body">Texte</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                </div>
+                                <br />
+                                <form action="/posts/store" method="POST"
+                                enctype="multipart/form-data">
+                                
+                                <div class="control-group">
+                                <div class="form-group floating-label-form-group
+                                controls">
+                                <label>Image</label>
+                                <input type="file" class="form-control" id="image" name="image">
+                                </div>
+                                
+
+                                <br />
+                               <div class="form-group">  <button class="btn btn-primary text-uppercase" id="sendMessageButton" type="submit">Send</button>
+                               </div>
+                            </form>
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- footer -->
+        <%- include('layouts/footer'); -%>
+        <!-- script-->
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>
